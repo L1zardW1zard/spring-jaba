@@ -1,9 +1,7 @@
 package com.example.reg.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class UserEntity {
@@ -14,7 +12,18 @@ public class UserEntity {
     private String username;
     private String password;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<PostEntity> posts;
+
     public UserEntity() {
+    }
+
+    public List<PostEntity> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<PostEntity> posts) {
+        this.posts = posts;
     }
 
     public Long getId() {

@@ -1,4 +1,4 @@
-package com.example.reg;
+package com.example.reg.controller;
 
 import com.example.reg.entity.UserEntity;
 import com.example.reg.exception.UserAlreadyExistException;
